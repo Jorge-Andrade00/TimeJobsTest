@@ -10,8 +10,10 @@ const getWeatherByCity = async (req, res) => {
         city: city
     })
     if (cities.length !== 0) {
+        const end = new Date()
         console.log('existe en la bd');
-        data = cities[0].currentWeather
+        res.header('request-time', `${end - start} ms`)
+        res.send(cities[0].currentWeather)
     } else {
         helper.getCurrentWeatherByCityName(city, async (err, currentWeather) => {
 
@@ -23,15 +25,12 @@ const getWeatherByCity = async (req, res) => {
                 })
                 console.log('creando en la bd');
                 await newCity.save()
-                data = newCity.currentWeather 
+                const end = new Date()
+                res.header('request-time', `${end - start} ms`)
+                res.send(newCity.currentWeather)
             }
         });
     }
-    const end = new Date()
-    const requestime = end - start;
-    res.header('request_time', requestime)
-    res.send(data)
-
 }
 
 module.exports = {
