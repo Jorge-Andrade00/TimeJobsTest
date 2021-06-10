@@ -7,6 +7,6 @@ route.get('/', (req, res)=>{
     res.send("Hola mundo desde las rutas")
 })
 
-route.get('/api/:city', getWeatherByCity)
+route.get('/getWeather/:city', getWeatherByCity)
 
 module.exports = route
