@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 require('./database')
 
+
 //Routes
 app.use('/api', require('./Routes/weather.routes'))
 
