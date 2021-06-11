@@ -1,7 +1,7 @@
 # Backend Challenge Time Jobs
 Esta api entrega los datos en tiempo real sobre la temperatura de las ciudades que se consultan. 
 Utiliza la API de https://openweathermap.org/api, para obtener las ciudades que no se encuentren almacenadas en nuestra base de datos, y posteriormente son guardadas.
-## Technologies
+## Stack
 Proyecto creado con:
 * Node JS: 14.17.0
 * Express: 4.17.1
